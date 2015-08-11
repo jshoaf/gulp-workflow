@@ -1,0 +1,10 @@
+{
+  "name": "workflows",
+  "version": "0.0.1",
+  "description": "Lynda.com learning",
+  "author": "Jonathan Shoaf",
+  "repository": {
+    "type": "git",
+    "url": "?.git"
+  }
+}

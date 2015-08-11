@@ -1,0 +1,10 @@
+# For Mac
+.DS_Store
+# Node
+node_modules
+# Various
+.tmp
+# SASS
+.sass-cache
+# Images
+builds/**/images/*
