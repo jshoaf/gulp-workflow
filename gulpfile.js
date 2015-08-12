@@ -13,7 +13,7 @@ var jsSources = [
   'components/scripts/tagline.js',
   'components/scripts/template.js'
 ];
-var sassSources = ['components/sass/style.css'];
+var sassSources = ['components/sass/style.scss'];
 
 gulp.task('log', function() {
   gutil.log('workflows are awesome');
@@ -37,6 +37,7 @@ gulp.task('compass', function() {
   gulp.src(sassSources)
     .pipe(compass({
       sass: 'components/sass',
+      css: 'builds/development/css',
       image: 'builds/development/images',
       style: 'expanded'
     }) // or use a config.rb file (ruby)
@@ -45,3 +46,9 @@ gulp.task('compass', function() {
 });
 
 gulp.task('default', ['coffee', 'js', 'compass']);
+
+gulp.task('watch', function () {
+  gulp.watch(coffeeSources, ['coffee']);
+  gulp.watch(jsSources, ['js']);
+  gulp.watch('components/sass/*.scss', ['compass']);
+});
